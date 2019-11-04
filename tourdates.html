@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="stylingTourdates.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <link rel="icon" href="images/backgroundlogo.gif" type="image/gif">
+    <title>Rysavy Tour Dates</title>
+</head>
+<body>
+
+<header>
+        <a href="index.html"><h1>Rysavy</h1></a>      
+            <div id = "box" title ="Toggle Sound">
+                <label class = "switch">
+              <input type = "checkbox"  onClick="togglePlay()">
+              <div class = "slider round"></div>
+              <audio id="sound1" src="audio/Mellow.mp3" loop="true"></audio>
+            </div>           
+            <div class="menu-wrap">
+                <input type="checkbox" class="toggler"  onclick="myFunction()">
+                <div class="hamburger" ><div></div></div>
+               <div class="menu">  
+                  <div>
+                      <div>
+                        <div id="navlinks" style="display:none">
+                            <a href="index.html">Home</a>
+                            <a href="News.html">News</a>
+                            <a href="MusicIndex.html">Music</a>
+                            <a href="releases.html">Releases</a>
+                            <a href="tourdates.html">Tour Dates</a>
+                            <a href="aboutRysavy.html">About Rysavy</a>
+                            <a href="ContactAndBooking.html">Contact & Booking</a> 
+                        </div>
+                    </div>  
+                  </div> 
+                </div>
+            </div>
+</header>
+
+<h2>Tourdates</h2>
+<hr id=line>
+<br>
+
+<main>
+
+    <h2> - Unity Gathering - Poland -<br> 12.-16.08.2020 - 4h Set</h2>
+    <img src="images/unity.jpg" alt="">
+
+    <h4>If you wanna book me for your Party , please fill out the Form on the Contact And Booking Page.</h4>
+    <br>
+    <br>
+    <p>-Rysavy-</p>
+
+  
+</main>
+<footer>
+    <footer>&copy; Copyright 2019 Denis Rysavy All rights reserved</footer>
+</footer>
+</body>
+
+<script>
+    var sound1 = document.getElementById("sound1");
+    var isPlaying = false;
+
+    function togglePlay() {
+    if (isPlaying) {
+        sound1.pause()
+    } else {
+        sound1.play();
+    }
+    };
+    sound1.onplaying = function() {
+    isPlaying = true;
+    };
+    sound1.onpause = function() {
+    isPlaying = false;
+    };
+</script>
+
+
+<script>
+  function myFunction() {
+    document.getElementById("navlinks").style.display = "block";
+  }
+</script>
+<script type="text/javascript">
+    
+
+  function setCookie(c_name,value,exdays)
+{
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value=escape(value) + 
+  ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+  document.cookie=c_name + "=" + c_value;
+}
+
+function getCookie(c_name)
+{
+  var i,x,y,ARRcookies=document.cookie.split(";");
+  for (i=0;i<ARRcookies.length;i++)
+  {
+    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+    x=x.replace(/^\s+|\s+$/g,"");
+    if (x==c_name)
+      {
+      return unescape(y);
+      }
+    }
+}
+
+var song = document.getElementsByTagName('audio')[0];
+var played = false;
+var tillPlayed = getCookie('timePlayed');
+function update()
+{
+  if(!played){
+      if(tillPlayed){
+      song.currentTime = tillPlayed;
+      song.play();
+      played = true;
+      }
+      else {
+              song.play();
+              played = true;
+      }
+  }
+
+  else {
+  setCookie('timePlayed', song.currentTime);
+  }
+}
+setInterval(update,1000); 
+</script>
+</html>
