@@ -4,7 +4,7 @@
 
 
 $to = "rysavydenis@gmail.com";
-$Subject ="Message from my rysavymusic.com";
+$Subject ="Message from rysavymusic.com";
 
 $name = $_POST['name'];
 $email = $_POST['email']; 
