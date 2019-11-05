@@ -3,7 +3,7 @@
 
 
 
-$to = "rysavydenis@gmail.com";
+$to = "contact@rysavymusic.com";
 $Subject ="Message from rysavymusic.com";
 
 $name = $_POST['name'];
