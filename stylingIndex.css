@@ -100,7 +100,7 @@ a {
     width:73%;
     margin-left:350px;
     margin-top:10px;
-    margin-right:50px;
+    margin-right:0px;
     padding: 0;
     float:right;
     right:0;
@@ -109,6 +109,7 @@ a {
     transition: 1s;
     animation: hr;
     animation-duration:2s;
+
 }
 
 @keyframes hr {
@@ -118,6 +119,8 @@ a {
   0%{ transform:rotate(360deg);}
   100%{transform:rotate(0deg);}
 }
+
+
 
 @media screen and (max-height:450px) {
 
@@ -149,21 +152,21 @@ a {
 .deko{
     margin-top:80px;
 }
-
 footer {
-    
-    color:white;
-    height:30px;
-    margin-top:auto;
-    bottom:0;
-    left:25px;
-    right:0;
-    height:30px;
-    margin:25px;
-    margin-bottom: 10px;
-    animation: footer;
-    animation-duration:2s;
-
+  position:relative;
+  text-align:left;
+  bottom:0px;
+  color:white;
+  height:30px;
+  margin-top:100px;
+  bottom:-200px;
+  left:25px;
+  right:0;
+  height:30px;
+  margin:25px;
+  text-align:start;
+  animation: footer;
+  animation-duration:2s;
 }
 
 
